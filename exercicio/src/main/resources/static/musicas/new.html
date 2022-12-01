@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>TADS Atividade Desenvolvimento Web 2021-2</title>
+ </head>
+
+
+ <body>
+ <div class="container">
+ 	<div class="row">
+		<h1>Adicionar nova musica</h1>
+    </div>
+    
+    <div class="container">
+    	<div class="form-row">
+    		<form th:object="${requisicaoNovaMusica}" action="/musicas" method="POST">
+    			<div class="mb-3">
+    				<label class="form-label">Titulo</label>
+    				<input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{titulo}">
+    				<div class="invalid-feedback" th:errors="*{titulo}"></div>
+    			</div>
+    			<div class="mb-3">
+    				<label class="form-label">Artista</label>
+    				<input class="form-control" th:errorclass="is-invalid" type="text" th:field="*{artista}">
+    				<div class="invalid-feedback" th:errors="*{artista}"></div>
+    			</div>
+    			<div class="mb-3">
+    				<label class="form-label">Data de lancamento</label>
+    				<input class="form-control" th:errorclass="is-invalid" type="date" th:field="*{lanc}">
+    			</div>
+    			<a href="javascript:history.back()">Voltar</a>
+    			<button class="btn btn-primary" type="submit">Salvar</button>
+    		</form>
+    	</div>
+    </div>
+</div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ </body>
+</html>
